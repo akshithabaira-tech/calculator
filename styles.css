@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root { color-scheme: dark; font-family: 'Manrope', 'Segoe UI', sans-serif; background: #101116; color: #f4f4f7; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; background: radial-gradient(ellipse at 50% 38%, #20212b 0, #15161d 35%, #101116 75%); }
+button { font: inherit; }
+.page-shell { min-height: 100vh; display: grid; place-content: center; justify-items: center; padding: 32px 18px 22px; }
+.calculator { width: min(100%, 390px); padding: 24px; border: 1px solid #30313b; border-radius: 25px; background: linear-gradient(150deg, #202129, #191a21 55%, #17181e); box-shadow: 0 30px 90px #0008, inset 0 1px #ffffff0c; }
+.topbar { display: flex; align-items: center; justify-content: space-between; margin: 0 2px 30px; color: #a3a4af; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+.brand { display: flex; align-items: center; gap: 9px; }
+.brand-mark { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 8px; background: #8b78ff20; color: #a99aff; font-size: 17px; }
+.mode-label { color: #777986; font-size: 9px; letter-spacing: .13em; }
+.display { min-height: 126px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; padding: 10px 4px 23px; overflow: hidden; }
+.expression { width: 100%; min-height: 24px; overflow: hidden; color: #858692; text-align: right; white-space: nowrap; font-family: 'DM Mono', monospace; font-size: 15px; }
+.result { max-width: 100%; overflow: hidden; color: #f7f7fa; text-align: right; text-overflow: clip; white-space: nowrap; font-family: 'DM Mono', monospace; font-size: clamp(38px, 12vw, 53px); font-weight: 400; letter-spacing: -.07em; }
+.result.error { color: #ff858d; font-family: 'Manrope', sans-serif; font-size: 24px; letter-spacing: -.03em; }
+.keypad { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; }
+.key { position: relative; min-height: 64px; border: 1px solid #ffffff06; border-radius: 17px; background: #292a33; color: #f3f3f6; cursor: pointer; font-size: 20px; font-weight: 600; transition: transform .12s ease, background .16s ease, box-shadow .16s ease; -webkit-tap-highlight-color: transparent; }
+.key:hover { background: #353640; }
+.key:active, .key.pressed { transform: scale(.94); }
+.key:focus-visible { outline: 2px solid #aa9cff; outline-offset: 2px; }
+.key-utility { background: #2b2c35; color: #aaa7bd; font-size: 15px; }
+.key-operator { background: #292632; color: #ae9fff; font-size: 23px; }
+.key-operator:hover { background: #363044; }
+.key-sign { color: #c4c2ce; font-size: 16px; }
+.key-equals { border: 0; background: linear-gradient(145deg, #a28dff, #8068ed); color: #fff; font-size: 24px; box-shadow: 0 7px 18px #8b75f533; }
+.key-equals:hover { background: linear-gradient(145deg, #b09fff, #927df7); box-shadow: 0 8px 22px #8b75f555; }
+.hint { display: flex; justify-content: center; align-items: center; gap: 7px; margin-top: 21px; color: #777984; font-size: 10px; font-weight: 600; letter-spacing: .02em; }
+.keyboard-icon { font-size: 14px; }
+.hint-separator { margin: 0 3px; color: #4e505a; }
+kbd { padding: 2px 5px; border: 1px solid #3b3c46; border-radius: 4px; background: #25262e; color: #a4a5ae; font: inherit; }
+.page-note { margin: 19px 0 0; color: #666873; font-size: 11px; letter-spacing: .04em; }
+@media (max-width: 390px) { .calculator { padding: 19px; border-radius: 22px; } .keypad { gap: 9px; } .key { min-height: 59px; border-radius: 15px; } .display { min-height: 116px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
